@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>NASA Observatory</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="assets/javascript/Distance.js"></script>
+  <link rel="stylesheet"  type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron">
+        <div id="Title">
+            <h1 class="text-center header">NASA Observatory</h1>
+        </div>
+      <h3 class="text-center">Earth Polychromatic Imaging Camera (EPIC)</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Launch User Survey
+              </button>
+          </div>
+      <div class="col-md-3">
+      <div class="btn-group" role="group" aria-label="Basic example">
+            <a type="button" class="btn btn-secondary" href="EPIC.html">EPIC</a>
+            <a type="button" class="btn btn-secondary" href="index.html">APOD</a>
+            <a type="button" class="btn btn-secondary" href="results.html">Results</a>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mb-4">
+          <div class="card-header">Earth Polychromatic Imaging Camera (EPIC)</div>
+          <div class="card-body">
+          <div class="row">
+          <div class="col-md-9">
+            <form id="apod-form">
+              <label for="day-input"></label>
+              <input id="find-day" type="submit" value="Day Search">
+              <input type="date" id="day-input"><br>
+            </form>
+          </div>
+          <div class="row">
+              <div class="col-md-3">
+                  <button type="button" class="btn btn-primary">
+                      Random Day
+                    </button>
+              </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <form id="survey-form">
+                      <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <label for="cities-input">Search for Cities</label>
+                    <input type="text" id="cities-input"><br>
+                    </form>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>

@@ -1,0 +1,55 @@
+.btn-grp{
+    padding-right: 4px
+}
+.col-md-3{
+    padding-bottom: 25px
+}
+#find-day, #randomDay {
+        color: rgb(255, 255, 255); font-size: 20px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(179, 180, 180) 0%, rgb(117, 117, 117) 50%, rgb(42, 42, 43) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(8, 8, 8); display: inline-block;}
+        .myButton:hover {
+        background: #1C6EA4; }
+        .myButton:active {
+        background: #144E75; }
+
+body{
+    background-image: url("NASAbackground1.png")
+}
+.TitleHeader{
+    font-size: 35px;
+    font-weight: bolder;
+    background-color: lightgrey
+}
+h1{
+    font-size: 110px;
+    color: black;background-color: 0, 0, 0, 0.1;
+}
+.jumbotron{
+    height: 250px;
+    position: relative;
+}
+.daySearch{
+
+}
+#daySearch {
+    color: rgb(255, 154, 95); 
+    font-size: 25px; 
+    line-height: 16px; 
+    padding: 6px; 
+    border-radius: 10px; 
+    font-family: Georgia, serif; 
+    font-weight: normal; 
+    text-decoration: none; 
+    font-style: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    background-image: linear-gradient(to right, rgb(162, 163, 163) 0%, rgb(97, 98, 99) 50%, rgb(65, 66, 66) 100%); 
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; 
+    border: 2px solid rgb(8, 8, 8); 
+    display: inline-block;}
+#buttons:hover {
+    background: #1C6EA4; }
+#buttons:active {
+    background: #144E75; }
+h3{
+    font-size: 40px
+}
