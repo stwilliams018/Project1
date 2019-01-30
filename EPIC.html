@@ -21,71 +21,95 @@
 <body>
 
   <div class="container">
-    <div class="jumbotron">
+    
         <div id="Title">
             <h1 class="text-center header">NASA Observatory</h1>
         </div>
-      <h3 class="text-center">Earth Polychromatic Imaging Camera (EPIC)</h3>
-    </div>
+      <div>
+        <h3 class="text-center">Earth PolyChromatic Imaging Camera (EPIC)</h3></br></br>
+      </div>
     <div class="row">
         <div class="col-md-9">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button"  id="surveybutton" data-toggle="modal" data-target="#userSurvey">
                 Launch User Survey
               </button>
           </div>
       <div class="col-md-3">
       <div class="btn-group" role="group" aria-label="Basic example">
-            <a type="button" class="btn btn-secondary" href="EPIC.html">EPIC</a>
-            <a type="button" class="btn btn-secondary" href="index.html">APOD</a>
-            <a type="button" class="btn btn-secondary" href="results.html">Results</a>
+        <a type="button" class="btn btn-outline-secondary" href="EPIC.html">EPIC</a>
+        <a type="button" class="btn btn-outline-secondary" href="index.html">APOD</a>
+        <a type="button" class="btn btn-outline-secondary" href="results.html">Results</a>
       </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="card mb-4">
-          <div class="card-header">Earth Polychromatic Imaging Camera (EPIC)</div>
+          <div class="TitleHeader">
+          <div class="card-header epicTitle"></div>
+        </div>
           <div class="card-body">
           <div class="row">
           <div class="col-md-9">
             <form id="apod-form">
               <label for="day-input"></label>
-              <input id="find-day" type="submit" value="Day Search">
-              <input type="date" id="day-input"><br>
+              <input id="epicfind-day" type="submit" value="Day Search">
+              <input type="date" id="epicday-input"><br>
             </form>
           </div>
           <div class="row">
               <div class="col-md-3">
-                  <button type="button" class="btn btn-primary">
+                  <button type="button"  id="epicrandomday">
                       Random Day
                     </button>
               </div>
           </div>
           </div>
+          <div class="card-header"id="epicbody"></div>
         </div>
       </div>
       </div>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <form id="survey-form">
-                      <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                    <label for="cities-input">Search for Cities</label>
-                    <input type="text" id="cities-input"><br>
-                    </form>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  ...
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
+      
     </div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="userSurvey" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="user-survey">User Survey</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form id="survey-form">
+            <label for="fn-label">First Name</label>
+            <input type="text" class="form-control" id="fn-input" placeholder="John">
+            <label for="ln-lable">Last Name</label>
+            <input type="text" class="form-control" id="ln-input" placeholder="Doe">
+            <label for="location-lable">Location</label>
+            <input type="text" class="form-control" id="location-input" placeholder="Atlanta, GA">
+            <label for="email-label">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="name@example.com">
+            <label for="apod-label">Best APOD:</label><br>
+            <input type="date" id="apod-input"><br>
+            <label for="epic-label">Best EPIC:</label><br>
+            <input type="date" id="epic-input"><br>
+            <label for="comments-label">Comments</label>
+            <textarea class="form-control" id="comments-input" rows="3"></textarea>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" data-dismiss="modal" id="save" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
