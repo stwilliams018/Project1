@@ -91,17 +91,21 @@ $( document ).ready(function(){
     var onloadTitle = responseload.title;
     var onloadDate = responseload.date
 
-    $(".aopdTitle").html("Astronomy Picture of the Day - " + onloadTitle + "  " + onloadDate);
+    $(".apodTitle").html("Astronomy Picture of the Day - " + onloadDate);
 
     var onloadImgEmbed = $("<img>").attr("src", onloadImg);
-    $("#onload-title").prepend(onloadImgEmbed);
-    $("#onload-title").prepend(onloadExp);
+    $("#onload-header").prepend(onloadTitle);
+    $("#onload-body").prepend(onloadImgEmbed);
+    $("#onload-exp").prepend(onloadExp);
 
   });
 
   //Random Date Selector Function for APOD
   $("#randomDay").on("click", function(eventRandom){
     eventRandom.preventDefault();
+    $("#onload-body").empty();
+    $("#onload-header").empty();
+    $("#onload-exp").empty();
 
     //function to create random day at button click
     function randomDate(start, end) {
@@ -129,11 +133,12 @@ $( document ).ready(function(){
       var randomTitle = responseRandom.title;
       var randomDate = responseRandom.date;
   
-      $(".card-header").html("Astronomy Picture of the Day - " + randomTitle + "  " + randomDate);
+      $(".apodTitle").html("Astronomy Picture of the Day - " + randomDate);
   
       var randomImgEmbed = $("<img>").attr("src", randomImg);
-      $("#onload-title").prepend(randomImgEmbed);
-      $("#onload-title").prepend(randomExp);
+      $("#onload-header").prepend(randomTitle);
+      $("#onload-body").prepend(randomImgEmbed);
+      $("#onload-exp").prepend(randomExp);
      
   });
    
@@ -142,6 +147,9 @@ $( document ).ready(function(){
   //Date Picker Function for APOD
   $("#find-day").on("click", function(eventSearch){
     eventSearch.preventDefault();
+    $("#onload-body").empty();
+    $("#onload-header").empty();
+    $("#onload-exp").empty();
 
     var searchformatted = moment($("#day-input").val().trim(), "YYYY-MM-DD").format("YYYY-MM-DD");
     console.log (searchformatted);
@@ -159,39 +167,50 @@ $( document ).ready(function(){
       var searchExp = responseSearch.explanation;
       var searchImg = responseSearch.url;
       var searchTitle = responseSearch.title;
+      var searchDate = responseSearch.date;
   
-      $(".card-header").html("Astronomy Picture of the Day - " + searchTitle);
+      $(".apodTitle").html("Astronomy Picture of the Day - " + searchDate);
   
       var searchImgEmbed = $("<img>").attr("src", searchImg);
-      $("#onload-title").prepend(searchImgEmbed);
-      $("#onload-title").prepend(searchExp);
+      $("#onload-header").prepend(searchTitle);
+      $("#onload-body").prepend(searchImgEmbed);
+      $("#onload-exp").prepend(searchExp);
   });
 
   })
   //Date Picker function for EPIC
-  $("#epicfind-day").on("click", function(eventSearch){
-    eventSearch.preventDefault();
+  $("#marsfind-day").on("click", function(eventSearchMars){
+    eventSearchMars.preventDefault();
 
-    var searchformatted = moment($("#epicday-input").val().trim(), "YYYY-MM-DD").format("YYYY-MM-DD");
+    var searchformatted = moment($("#marsday-input").val().trim(), "YYYY-MM-DD").format("YYYY-MM-DD");
     console.log (searchformatted);
+    $(".marsTitle").html("Mars - " + searchformatted);
 
-    var searchurlEPIC = "https://api.nasa.gov/EPIC/api/natural/date/"+ searchformatted + "?api_key=bCP9fU9nJWwKOKJTIN3koopL1phM96nMizWD2crF";
-    console.log(searchurlEPIC);
-
+    var searchurlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" + searchformatted + "&api_key=bCP9fU9nJWwKOKJTIN3koopL1phM96nMizWD2crF";
+    console.log(searchurlMars);
+  
     //JSON call for new APOD based on user date picker
     $.ajax({
-      url: searchurlEPIC,
+      url: searchurlMars,
       method: "GET"
-    }).then(function(responseSearchEPIC) {
-      console.log(responseSearchEPIC);
-  
+    }).then(function(responseSearchMars) {
+      console.log(responseSearchMars);
+
+      for (var i = 0; i < 4; i++){
+
+      var searchimg = responseSearchMars.photos[i].img_src;
+      var searchCamera = responseSearchMars.photos[i].camera.full_name;
+      var searchImgEmbed = $("<img>").attr("src", searchimg);
+      $("#marsbody").prepend(searchImgEmbed);
+      $("#marsbody").prepend(searchCamera);
+      }
   });
 
   })
 
   //Random Date Selector Function for EPIC
-  $("#epicrandomday").on("click", function(eventRandomEPIC){
-    eventRandomEPIC.preventDefault();
+  $("#marsrandomday").on("click", function(eventRandomMars){
+    eventRandomMars.preventDefault();
 
     //function to create random day at button click
     function randomDate(start, end) {
@@ -199,20 +218,31 @@ $( document ).ready(function(){
     }
     
     var random = (randomDate(new Date(2012, 0, 1), new Date()));
-    var randomFormatted = moment(random, "YYYY-MM-DD").format('YYYY-MM-DD');
+    var randomformatted = moment(random, "YYYY-MM-DD").format('YYYY-MM-DD');
     console.log(random);
-    console.log(randomFormatted)
+    console.log(randomformatted);
+    $(".marsTitle").html("Mars Rover - " + randomformatted);
 
     //JSON call for new APOD based on random day generator
-    var randomurlEPIC = "https://api.nasa.gov/planetary/apod?date="+ randomFormatted +"&api_key=bCP9fU9nJWwKOKJTIN3koopL1phM96nMizWD2crF"
+    var randomurlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" + randomformatted + "&api_key=bCP9fU9nJWwKOKJTIN3koopL1phM96nMizWD2crF";
 
-    console.log(randomurlEPIC)
+    console.log(randomurlMars)
 
     $.ajax({
-      url: randomurlEPIC,
+      url: randomurlMars,
       method: "GET"
-    }).then(function(responseRandomEPIC) {
-      console.log(responseRandomEPIC);
+    }).then(function(responseRandomMars) {
+      console.log(responseRandomMars);
+
+      for (var i = 0; i < 4; i++){
+
+        var randomimg = responseRandomMars.photos[i].img_src;
+        var randomCamera = responseRandomMars.photos[i].camera.full_name;
+        var randomImgEmbed = $("<img>").attr("src", randomimg);
+        $("#marsbody").prepend(randomImgEmbed);
+        $("#marsbody").prepend(randomCamera);
+        }
+
     });
   });
 

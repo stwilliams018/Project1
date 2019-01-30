@@ -4,7 +4,7 @@
 .col-md-3{
     padding-bottom: 25px
 }
-#find-day, #randomDay, #epicfind-day, #epicrandomday {
+#find-day, #randomDay, #marsfind-day, #marsrandomday {
         color: rgb(255, 255, 255); font-size: 20px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(179, 180, 180) 0%, rgb(117, 117, 117) 50%, rgb(42, 42, 43) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(8, 8, 8); display: inline-block;}
         .myButton:hover {
         background: #1C6EA4; }
@@ -54,4 +54,12 @@ h3{
 }
 #survey-table{
     font-size: 20px
+}
+#onload-header{
+    font-size: 25;
+    font-weight: bolder
+}
+#marsbody{
+    font-size: 35;
+    font-weight: bolder
 }
