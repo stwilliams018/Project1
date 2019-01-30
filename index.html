@@ -5,6 +5,7 @@
 <head>
 
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NASA Observatory</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -22,58 +23,55 @@
 
   <div class="container">
     
-        <div id="Title">
-            <h1 class="text-center header">NASA Observatory</h1>
-        </div>
-      <div>
-        <h3 class="text-center">Astronomy Picture of the Day (APOD)</h3></br></br>
-      </div>
+    <div id="Title">
+      <h1 class="text-center header">NASA Observatory</h1>
+    </div>
+    <div>
+      <h3 class="text-center">Astronomy Picture of the Day (APOD)</h3></br></br>
+    </div>
     <div class="row">
-        <div class="col-md-9">
-            <button type="button"  id="surveybutton" data-toggle="modal" data-target="#userSurvey">
-                Launch User Survey
-              </button>
-          </div>
-      <div class="col-md-3">
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <a type="button" class="btn btn-outline-secondary" href="EPIC.html">EPIC</a>
-        <a type="button" class="btn btn-outline-secondary" href="index.html">APOD</a>
-        <a type="button" class="btn btn-outline-secondary" href="results.html">Results</a>
+      <div class="col-md-9">
+        <button type="button"  id="surveybutton" data-toggle="modal" data-target="#userSurvey">
+            Launch User Survey
+        </button>
       </div>
+      <div class="col-md-3">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <a type="button" class="btn btn-outline-secondary" href="EPIC.html">Mars Rover</a>
+          <a type="button" class="btn btn-outline-secondary" href="index.html">APOD</a>
+          <a type="button" class="btn btn-outline-secondary" href="results.html">Results</a>
+        </div>
       </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="card mb-4">
-          <div class="TitleHeader">
-          <div class="card-header apodTitle"></div>
-        </div>
+        
+          
+            <div class="apodTitle"></div></div></br></br>
           <div class="card-body">
-          <div class="row">
-          <div class="col-md-9">
-            <form id="apod-form">
-              <label for="day-input"></label>
-              <input id="find-day" type="submit" value="Day Search">
-              <input type="date" id="day-input"><br>
-            </form>
-          </div>
-          <div class="row">
-              <div class="col-md-3">
+            <div class="row">
+              <div class="col-md-9">
+                <form id="apod-form">
+                  <label for="day-input"></label>
+                  <input id="find-day" type="submit" value="Day Search">
+                  <input type="date" id="day-input"><br>
+                </form>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
                   <button type="button"  id="randomDay">
                       Random Day
-                    </button>
+                  </button>
+                </div>
               </div>
-          </div>
           </div>
           <div class="card-header"id="onload-header"></div>
           <div class="card-header"id="onload-exp"></div>
           <div class="card-header"id="onload-body"></div>
         </div>
-      </div>
-      </div>
-      
     </div>
   </div>
+</div>
 
 
 <!-- Modal -->

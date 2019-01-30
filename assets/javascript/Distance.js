@@ -83,7 +83,6 @@ $( document ).ready(function(){
     url: onloadqueryURL,
     method: "GET"
   }).then(function(responseload) {
-    //$("#distance-view").text(JSON.stringify(response));
     console.log(responseload);
 
     var onloadExp = responseload.explanation;
@@ -93,7 +92,7 @@ $( document ).ready(function(){
 
     $(".apodTitle").html("Astronomy Picture of the Day - " + onloadDate);
 
-    var onloadImgEmbed = $("<img>").attr("src", onloadImg);
+    var onloadImgEmbed = $("<img>").attr({src : onloadImg, "height" : "full", "width" : "full"});
     $("#onload-header").prepend(onloadTitle);
     $("#onload-body").prepend(onloadImgEmbed);
     $("#onload-exp").prepend(onloadExp);
@@ -181,6 +180,7 @@ $( document ).ready(function(){
   //Date Picker function for EPIC
   $("#marsfind-day").on("click", function(eventSearchMars){
     eventSearchMars.preventDefault();
+    $("#marsbody").empty();
 
     var searchformatted = moment($("#marsday-input").val().trim(), "YYYY-MM-DD").format("YYYY-MM-DD");
     console.log (searchformatted);
@@ -211,13 +211,14 @@ $( document ).ready(function(){
   //Random Date Selector Function for EPIC
   $("#marsrandomday").on("click", function(eventRandomMars){
     eventRandomMars.preventDefault();
+    $("#marsbody").empty();
 
     //function to create random day at button click
     function randomDate(start, end) {
       return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     }
     
-    var random = (randomDate(new Date(2012, 0, 1), new Date()));
+    var random = (randomDate(new Date(2015, 0, 1), new Date()));
     var randomformatted = moment(random, "YYYY-MM-DD").format('YYYY-MM-DD');
     console.log(random);
     console.log(randomformatted);
