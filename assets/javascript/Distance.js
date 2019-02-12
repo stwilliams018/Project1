@@ -177,7 +177,7 @@ $( document ).ready(function(){
   });
 
   })
-  //Date Picker function for EPIC
+  //Date Picker function for 
   $("#marsfind-day").on("click", function(eventSearchMars){
     eventSearchMars.preventDefault();
     $("#marsbody").empty();
@@ -196,7 +196,14 @@ $( document ).ready(function(){
     }).then(function(responseSearchMars) {
       console.log(responseSearchMars);
 
-      for (var i = 0; i < 4; i++){
+      var control = 10;
+      if( responseSearchMars.photos.length < 10){
+
+        control = responseSearchMars.photos.length;
+      }
+
+      for (var i = 0; i <= control; i++)
+      {
 
       var searchimg = responseSearchMars.photos[i].img_src;
       var searchCamera = responseSearchMars.photos[i].camera.full_name;
@@ -208,7 +215,7 @@ $( document ).ready(function(){
 
   })
 
-  //Random Date Selector Function for EPIC
+  //Random Date Selector Function for rover pictures
   $("#marsrandomday").on("click", function(eventRandomMars){
     eventRandomMars.preventDefault();
     $("#marsbody").empty();
@@ -224,7 +231,7 @@ $( document ).ready(function(){
     console.log(randomformatted);
     $(".marsTitle").html("Mars Rover - " + randomformatted);
 
-    //JSON call for new APOD based on random day generator
+    //JSON call for new rover pictures based on random day generator
     var randomurlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" + randomformatted + "&api_key=bCP9fU9nJWwKOKJTIN3koopL1phM96nMizWD2crF";
 
     console.log(randomurlMars)
@@ -235,7 +242,14 @@ $( document ).ready(function(){
     }).then(function(responseRandomMars) {
       console.log(responseRandomMars);
 
-      for (var i = 0; i < 4; i++){
+      var control = 10;
+      if( responseRandomMars.photos.length < 10){
+
+        control = responseRandomMars.photos.length;
+      }
+
+      for (var i = 0; i <= control; i++)
+      {
 
         var randomimg = responseRandomMars.photos[i].img_src;
         var randomCamera = responseRandomMars.photos[i].camera.full_name;
@@ -244,7 +258,7 @@ $( document ).ready(function(){
         $("#marsbody").prepend(randomCamera);
         }
 
-    });
+  
   });
-
+});
 })

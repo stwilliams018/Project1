@@ -26,7 +26,7 @@
         background: #144E75; }
 
 body{
-    background-image: url("NASAbackground1.png")
+    background-image: url("DialogBackground.png")
 }
 .TitleHeader {
     font-size: 30px;
@@ -40,7 +40,8 @@ body{
 }
 h1{
     font-size: 110px;
-    color: black;background-color: 0, 0, 0, 0.1;
+    color: white;
+    background-color: 0, 0, 0, 0.1;
 }
 .jumbotron{
     height: 250px;
@@ -68,6 +69,7 @@ h1{
 #buttons:active {
     background: #144E75; }
 h3{
+    color: white;
     font-size: 40px
 }
 #survey-table{
