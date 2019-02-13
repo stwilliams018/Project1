@@ -83,7 +83,8 @@ h3{
 }
 #marsbody{
     font-size: 30px;
-    font-weight: bolder
+    font-weight: bolder;
+    color: white
 }
 #userSurvey{
     background-color: black
@@ -95,7 +96,7 @@ h3{
     color: white;
     font-size: 18px
 }
-.apodTitle{
+.apodTitle, .marsTitle{
     font-size:45px;
     font-weight: bolder;
     color: white;

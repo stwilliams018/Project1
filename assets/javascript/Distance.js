@@ -187,6 +187,7 @@ $( document ).ready(function(){
   $("#marsfind-day").on("click", function(eventSearchMars){
     eventSearchMars.preventDefault();
     $("#marsbody").empty();
+    $("#marsTitle").empty();
 
     var searchformatted = moment($("#marsday-input").val().trim(), "YYYY-MM-DD").format("YYYY-MM-DD");
     console.log (searchformatted);
@@ -225,6 +226,7 @@ $( document ).ready(function(){
   $("#marsrandomday").on("click", function(eventRandomMars){
     eventRandomMars.preventDefault();
     $("#marsbody").empty();
+    $("#marsTitle").empty();
 
     //function to create random day at button click
     function randomDate(start, end) {
