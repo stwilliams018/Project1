@@ -26,7 +26,7 @@
         background: #144E75; }
 
 body{
-    background-image: url("DialogBackground.png");
+    background-image: url("spaceImg3.png");
 
 }
 .TitleHeader {
@@ -37,10 +37,10 @@ body{
     text-align: center;
     border: 3px solid black;
     padding: 0px,
-    margin: 0px
+    
 }
 h1{
-    font-size: 110px;
+    font-size: 80px;
     color: white;
     background-color: 0, 0, 0, 0.1;
 }
@@ -50,7 +50,7 @@ h1{
 }
 
 #surveybutton  {
-    color: rgb(255, 154, 95); 
+    color: rgb(226, 12, 12); 
     font-size: 25px; 
     line-height: 16px; 
     padding: 6px; 

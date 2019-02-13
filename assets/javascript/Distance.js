@@ -92,7 +92,13 @@ $( document ).ready(function(){
 
     $(".apodTitle").html("Astronomy Picture of the Day - " + onloadDate);
 
-    var onloadImgEmbed = $("<img>").attr({src : onloadImg, "width" : "1000em"});
+    if(responseload.media_type="image"){
+    var imagetest = $("<img>").attr({src : onloadImg, "width" : "1000em"})}
+    else
+    {var imagetest = $("<movie>").attr({src : onloadImg, "width" : "1000em", })}
+
+    var onloadImgEmbed = imagetest;
+    
     $("#onload-header").prepend(onloadTitle);
     $("#onload-body").prepend(onloadImgEmbed);
     $("#onload-exp").prepend(onloadExp);
