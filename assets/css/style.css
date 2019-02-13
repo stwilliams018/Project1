@@ -26,7 +26,8 @@
         background: #144E75; }
 
 body{
-    background-image: url("DialogBackground.png")
+    background-image: url("DialogBackground.png");
+
 }
 .TitleHeader {
     font-size: 30px;

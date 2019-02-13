@@ -92,7 +92,7 @@ $( document ).ready(function(){
 
     $(".apodTitle").html("Astronomy Picture of the Day - " + onloadDate);
 
-    var onloadImgEmbed = $("<img>").attr({src : onloadImg, "height" : "full", "width" : "full"});
+    var onloadImgEmbed = $("<img>").attr({src : onloadImg, "width" : "1000em"});
     $("#onload-header").prepend(onloadTitle);
     $("#onload-body").prepend(onloadImgEmbed);
     $("#onload-exp").prepend(onloadExp);
@@ -134,7 +134,7 @@ $( document ).ready(function(){
   
       $(".apodTitle").html("Astronomy Picture of the Day - " + randomDate);
   
-      var randomImgEmbed = $("<img>").attr("src", randomImg);
+      var randomImgEmbed = $("<img>").attr({src:randomImg , "width":"1000em"});
       $("#onload-header").prepend(randomTitle);
       $("#onload-body").prepend(randomImgEmbed);
       $("#onload-exp").prepend(randomExp);
@@ -170,7 +170,7 @@ $( document ).ready(function(){
   
       $(".apodTitle").html("Astronomy Picture of the Day - " + searchDate);
   
-      var searchImgEmbed = $("<img>").attr("src", searchImg);
+      var searchImgEmbed = $("<img>").attr({src:searchImg , "width":"1000em"});
       $("#onload-header").prepend(searchTitle);
       $("#onload-body").prepend(searchImgEmbed);
       $("#onload-exp").prepend(searchExp);
@@ -207,7 +207,7 @@ $( document ).ready(function(){
 
       var searchimg = responseSearchMars.photos[i].img_src;
       var searchCamera = responseSearchMars.photos[i].camera.full_name;
-      var searchImgEmbed = $("<img>").attr("src", searchimg);
+      var searchImgEmbed = $("<img>").attr({src:searchimg , "width":"1000em"});
       $("#marsbody").prepend(searchImgEmbed);
       $("#marsbody").prepend(searchCamera);
       }
@@ -253,7 +253,8 @@ $( document ).ready(function(){
 
         var randomimg = responseRandomMars.photos[i].img_src;
         var randomCamera = responseRandomMars.photos[i].camera.full_name;
-        var randomImgEmbed = $("<img>").attr("src", randomimg);
+        var randomImgEmbed = $("<img>").attr({src:randomimg , "width":"1000em"});
+        
         $("#marsbody").prepend(randomImgEmbed);
         $("#marsbody").prepend(randomCamera);
         }
