@@ -18,12 +18,11 @@ $( document ).ready(function(){
   //Dialog Save for DB Push from user input on Survey
   $("#save").on("click", function(eventRandom){
     eventRandom.preventDefault();
-    alert("Submitted");
+  
 
     var firstName = $("#fn-input").val().trim();
     var lastName = $("#ln-input").val().trim();
     var location = $("#location-input").val().trim();
-    var email = $("#email-input").val().trim();
     var bestAPOD = $("#apod-input").val().trim();
     var bestEPIC = $("#epic-input").val().trim();
     var surveyComments = $("#comments-input").val().trim();
@@ -31,7 +30,6 @@ $( document ).ready(function(){
     console.log(firstName);
     console.log(lastName);
     console.log(location)
-    console.log(email);
     console.log(bestAPOD);
     console.log(bestEPIC);
     console.log(surveyComments);
@@ -40,13 +38,12 @@ $( document ).ready(function(){
       firstname : firstName,
       lastname : lastName,
       location : location,
-      email : email,
       bestapod : bestAPOD,
       bestepic : bestEPIC,
       comments : surveyComments,
     };
     database.ref().push(newSurvey);
-    alert("Added to DB");
+  
   })
 
   //Data Pull from Firebase to Survey results page
